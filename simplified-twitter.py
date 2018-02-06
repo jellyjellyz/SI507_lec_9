@@ -16,7 +16,7 @@ oauth = OAuth1Session(client_key,
                           resource_owner_secret=resource_owner_secret)
 
 protected_url = 'https://api.twitter.com/1.1/search/tweets.json'
-params = {'q':'food'}
+params = {'q':'food', 'count': '5'}
 r = oauth.get(protected_url, params=params)
 result_list = json.loads(r.text)
 for aDict in result_list["statuses"]:
